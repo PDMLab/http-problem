@@ -1,0 +1,16 @@
+{
+  "extends": "es/2015/server",
+  "env": {
+    "mocha": true
+  },
+  "rules": {
+    "no-restricted-syntax": [
+      0,
+      "ClassDeclaration"
+    ],
+    "prefer-rest-params": "off",
+    "prefer-reflect": "off",
+    "no-underscore-dangle": "off",
+    "class-methods-use-this":"off"
+  }
+}

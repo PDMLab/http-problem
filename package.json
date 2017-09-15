@@ -1,0 +1,29 @@
+{
+  "name": "problem-json",
+  "version": "0.1.0",
+  "description": "Create Problem Details for HTTP APIs according to RFC 7807",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "keywords": [
+    "problem+json",
+    "HTTP",
+    "REST",
+    "Hypermedia",
+    "Error"
+  ],
+  "author": "Alexander Zeitler <alexander.zeitler@pdmlab.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:PDMLab/problem-json.git"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-es": "^0.8.11",
+    "eslint-plugin-extended": "^0.2.0",
+    "mocha": "^3.5.3"
+  }
+}
