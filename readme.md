@@ -59,7 +59,7 @@ const httpProblem = require('problem-json');
 
 const extension = new httpProblem.Extension({
   balance: 30,
-  accounts: ['/account/12345, '/account/67890']
+  accounts: ['/account/12345', '/account/67890']
 });
 
 const doc = new httpProblem.Document({
