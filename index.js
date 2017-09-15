@@ -1,6 +1,7 @@
 'use strict';
 
 const statusCodes = require('./lib/statuscodes');
+const url = require('url');
 
 class Document {
   /**
@@ -27,6 +28,14 @@ class Document {
 
     if (status && type === 'about:blank') {
       title = statusCodes[status];
+    }
+
+    if (instance) {
+      url.parse(instance);
+    }
+
+    if (type) {
+      url.parse(type);
     }
 
     const result = {

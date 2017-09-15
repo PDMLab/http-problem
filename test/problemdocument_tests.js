@@ -16,6 +16,20 @@ describe('When creating a Problem Document with type and title', () => {
   });
 });
 
+describe('When creating a Problem Document with invalid URI type member', () => {
+  it('should throw an error', done => {
+    const type = 123;
+
+    try {
+      const doc = new Problem.Document({ type });
+    } catch (error) {
+      assert.notEqual(error, null);
+
+      return done();
+    }
+  });
+});
+
 describe('When creating a Problem Document with an Extension', () => {
   it('should contain extension', done => {
     const type = 'http://tempuri.org/my-problem';
@@ -61,6 +75,20 @@ describe('When creating a Problem Document with instance member', () => {
     assert.equal(doc.instance, instance);
 
     return done();
+  });
+});
+
+describe('When creating a Problem Document with invalid URI instance member', () => {
+  it('should throw an error', done => {
+    const instance = 123;
+
+    try {
+      const doc = new Problem.Document({ instance });
+    } catch (error) {
+      assert.notEqual(error, null);
+
+      return done();
+    }
   });
 });
 
