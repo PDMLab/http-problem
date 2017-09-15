@@ -59,7 +59,7 @@ const httpProblem = require('problem-json');
 
 const extension = new httpProblem.Extension({
   balance: 30,
-  accounts: ["/account/12345", "/account/67890"]
+  accounts: ['/account/12345, '/account/67890']
 });
 
 const doc = new httpProblem.Document({
@@ -74,8 +74,6 @@ const doc = new httpProblem.Document({
 
 ## Running the tests
 
-While `docker-compose` runs on Node.js 6+, running the tests requires you to use Node.js 8 as they make use of `async/await`.
-
 ```
 npm test
 ```
@@ -88,7 +86,7 @@ If you want to contribute - we'd love it! Just open an issue to work against so 
 
 If you see a bug, please be so kind as to show how it's failing, and we'll do our best to get it fixed quickly.
 
-Before sending a PR, please [create an issue](https://github.com/PDMLab/docker-compose/issues/new) to introduce your idea and have a reference for your PR.
+Before sending a PR, please [create an issue](https://github.com/PDMLab/project-json/issues/new) to introduce your idea and have a reference for your PR.
 
 Also please add tests and make sure to run `npm run eslint`.
 
