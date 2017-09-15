@@ -25,7 +25,8 @@ To generate this `problem+json` result
 {
     "type": "https://example.com/probs/out-of-credit",
     "title": "You do not have enough credit.",
-    "detail" : "Your current balance is 30, but that costs 50."
+    "detail": "Your current balance is 30, but that costs 50.",
+  	"instance": "/account/12345/msgs/abc",
 	"status": 400
 }
 ```
@@ -39,6 +40,7 @@ const doc = new httpProblem.Document({
   type: 'https://example.com/probs/out-of-credit',
   title: 'You do not have enough credit.',
   detail: 'Your current balance is 30, but that costs 50.',
+  instance. '/account/12345/msgs/abc',
   status: 400
 });
 ```
@@ -54,7 +56,6 @@ To generate this `problem+json` result
     "balance": 30,
     "accounts": ["/account/12345", "/account/67890"]
 }
-
 ```
 
 this code is required:

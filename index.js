@@ -9,12 +9,14 @@ class Document {
    * @param {String} [options.title]
    * @param {String} [options.type]
    * @param {String} [options.detail]
+   * @param {String} [options.instance]
    * @param {Number} [options.status]
    * @param {Extension} [extension]
    * @returns {{type: string, title: string}}
    */
   constructor (options, extension) {
     const detail = options.detail;
+    const instance = options.instance;
     let type = options.type;
     let title = options.title;
     const status = options.status;
@@ -31,6 +33,7 @@ class Document {
       type,
       title,
       detail,
+      instance,
       status
     };
 

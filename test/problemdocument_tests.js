@@ -53,6 +53,17 @@ describe('When creating a Problem Document with detail member', () => {
   });
 });
 
+describe('When creating a Problem Document with instance member', () => {
+  it('should contain instance member', done => {
+    const instance = '/account/12345/msgs/abc';
+    const doc = new Problem.Document({ instance });
+
+    assert.equal(doc.instance, instance);
+
+    return done();
+  });
+});
+
 describe('When creating a Problem Document only with status member', () => {
   it('should contain status member', done => {
     const status = 400;
