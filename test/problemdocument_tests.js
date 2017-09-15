@@ -41,3 +41,32 @@ describe('When creating a Problem Document with status member', () => {
     return done();
   });
 });
+
+describe('When creating a Problem Document only with status member', () => {
+  it('should contain status member', done => {
+    const status = 400;
+    const doc = new Problem.Document({ status });
+
+    assert.equal(doc.status, status);
+
+    return done();
+  });
+
+  it(`should have type 'about:blank'`, done => {
+    const status = 400;
+    const doc = new Problem.Document({ status });
+
+    assert.equal(doc.type, 'about:blank');
+
+    return done();
+  });
+
+  it(`should have title of status code per HTTP spec (e.g. 400 - Bad Request`, done => {
+    const status = 400;
+    const doc = new Problem.Document({ status });
+
+    assert.equal(doc.title, 'Bad Request');
+
+    return done();
+  });
+});
