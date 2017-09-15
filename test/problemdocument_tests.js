@@ -42,6 +42,17 @@ describe('When creating a Problem Document with status member', () => {
   });
 });
 
+describe('When creating a Problem Document with detail member', () => {
+  it('should contain detail member', done => {
+    const detail = 'Your current balance is 30, but that costs 50.';
+    const doc = new Problem.Document({ detail });
+
+    assert.equal(doc.detail, detail);
+
+    return done();
+  });
+});
+
 describe('When creating a Problem Document only with status member', () => {
   it('should contain status member', done => {
     const status = 400;

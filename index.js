@@ -8,11 +8,13 @@ class Document {
    * @param {Object} options
    * @param {String} [options.title]
    * @param {String} [options.type]
+   * @param {String} [options.detail]
    * @param {Number} [options.status]
    * @param {Extension} [extension]
    * @returns {{type: string, title: string}}
    */
   constructor (options, extension) {
+    const detail = options.detail;
     let type = options.type;
     let title = options.title;
     const status = options.status;
@@ -28,6 +30,7 @@ class Document {
     const result = {
       type,
       title,
+      detail,
       status
     };
 

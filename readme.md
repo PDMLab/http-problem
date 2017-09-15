@@ -25,6 +25,7 @@ To generate this `problem+json` result
 {
     "type": "https://example.com/probs/out-of-credit",
     "title": "You do not have enough credit.",
+    "detail" : "Your current balance is 30, but that costs 50."
 	"status": 400
 }
 ```
@@ -37,6 +38,7 @@ const httpProblem = require('problem-json');
 const doc = new httpProblem.Document({
   type: 'https://example.com/probs/out-of-credit',
   title: 'You do not have enough credit.',
+  detail: 'Your current balance is 30, but that costs 50.',
   status: 400
 });
 ```
@@ -73,7 +75,7 @@ const doc = new httpProblem.Document({
 
 ## What's missing?
 
-`problem-json` currently lacks support for `detail`- and `instance`-Members.
+`problem-json` currently lacks support for and `instance`-Members.
 
 ## Running the tests
 
@@ -91,7 +93,7 @@ If you see a bug, please be so kind as to show how it's failing, and we'll do ou
 
 Before sending a PR, please [create an issue](https://github.com/PDMLab/project-json/issues/new) to introduce your idea and have a reference for your PR.
 
-Also please add tests and make sure to run `npm run eslint`.
+Also please add tests and make sure to run `npm run lint`.
 
 ## License
 
