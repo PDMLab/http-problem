@@ -1,6 +1,6 @@
 {
   "name": "problem-json",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create Problem Details for HTTP APIs according to RFC 7807",
   "main": "index.js",
   "scripts": {
