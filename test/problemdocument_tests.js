@@ -30,3 +30,14 @@ describe('When creating a Problem Document with an Extension', () => {
     return done();
   });
 });
+
+describe('When creating a Problem Document with status member', () => {
+  it('should contain status member', done => {
+    const status = 400;
+    const doc = new Problem.Document({ status });
+
+    assert.equal(doc.status, status);
+
+    return done();
+  });
+});

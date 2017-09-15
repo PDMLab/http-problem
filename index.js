@@ -6,16 +6,19 @@ class Document {
    * @param {Object} options
    * @param {String} options.title
    * @param {String} options.type
+   * @param {Number} options.status
    * @param {Extension} [extension]
    * @returns {{type: string, title: string}}
    */
   constructor (options, extension) {
     const type = options.type;
     const title = options.title;
+    const status = options.status;
 
     const result = {
       type,
-      title
+      title,
+      status
     };
 
     if (extension) {
