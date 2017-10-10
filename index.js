@@ -68,7 +68,34 @@ class Extension {
   }
 }
 
+const BadRequestProblem = function () {
+  return new Document({ status: 400 });
+};
+
+const UnauthorizedProblem = function () {
+  return new Document({ status: 401 });
+};
+
+const ForbiddenProblem = function () {
+  return new Document({ status: 403 });
+};
+
+const NotFoundProblem = function () {
+  return new Document({ status: 404 });
+};
+
+const InternalServerErrorProblem = function () {
+  return new Document({ status: 500 });
+};
+
 module.exports = {
   Document,
-  Extension
+  Extension,
+  StatusCodeProblems: {
+    BadRequestProblem,
+    UnauthorizedProblem,
+    ForbiddenProblem,
+    NotFoundProblem,
+    InternalServerErrorProblem
+  }
 };

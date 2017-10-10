@@ -1,16 +1,16 @@
 # Create problem+json documents  with Node.js
 
-`problem-json` is a small library that allos you to create `problem+json` documents according to [RFC 7808](https://tools.ietf.org/html/rfc7807).
+`httpproblem` is a small library that allos you to create `problem+json` documents according to [RFC 7808](https://tools.ietf.org/html/rfc7807).
 
 ## Installation
 
 ```
-npm install --save-dev problem-json
+npm install --save-dev httpproblem
 ```
 
 ## Usage
 
-`problem-json` current supports these options:
+`httpproblem` current supports these options:
 
 * `type` (string) - A URI reference [[RFC3986](https://tools.ietf.org/html/rfc3986)] that identifies the problem type.
 * `title` (string) - A short, human-readable summary of the problem type.
@@ -37,7 +37,7 @@ To generate this `problem+json` result
 this code is required:
 
 ```javascript
-const httpProblem = require('problem-json');
+const httpProblem = require('httpproblem');
 
 const doc = new httpProblem.Document({
   type: 'https://example.com/probs/out-of-credit',
@@ -64,7 +64,7 @@ To generate this `problem+json` result
 this code is required:
 
 ```javascript
-const httpProblem = require('problem-json');
+const httpProblem = require('httpproblem');
 
 const extension = new httpProblem.Extension({
   balance: 30,
