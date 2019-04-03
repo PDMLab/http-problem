@@ -1,6 +1,6 @@
 # Create problem+json documents  with Node.js
 
-`httpproblem` is a small library that allos you to create `problem+json` documents according to [RFC 7808](https://tools.ietf.org/html/rfc7807).
+`httpproblem` is a small library that allos you to create `problem+json` documents according to [RFC 7807](https://tools.ietf.org/html/rfc7807).
 
 ## Installation
 
@@ -29,8 +29,8 @@ To generate this `problem+json` result
     "type": "https://example.com/probs/out-of-credit",
     "title": "You do not have enough credit.",
     "detail": "Your current balance is 30, but that costs 50.",
-  	"instance": "/account/12345/msgs/abc",
-	"status": 400
+    "instance": "/account/12345/msgs/abc",
+    "status": 400
 }
 ```
 
@@ -43,7 +43,7 @@ const doc = new httpProblem.Document({
   type: 'https://example.com/probs/out-of-credit',
   title: 'You do not have enough credit.',
   detail: 'Your current balance is 30, but that costs 50.',
-  instance. '/account/12345/msgs/abc',
+  instance: '/account/12345/msgs/abc',
   status: 400
 });
 ```
