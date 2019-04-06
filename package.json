@@ -22,9 +22,8 @@
     "url": "git@github.com:PDMLab/httpproblem.git"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-es": "^0.8.11",
-    "eslint-plugin-extended": "^0.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.12.0",
     "mocha": "^6.0.2",
     "typescript": "^3.4.2"
   }

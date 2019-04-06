@@ -4,10 +4,10 @@ const assert = require('assert');
 const Problem = require('../');
 
 describe('When creating a Problem Document with type and title', () => {
-  it('should contain title', done => {
+  it('should contain title', (done) => {
     const type = 'http://tempuri.org/my-problem';
     const title = 'something went wrong';
-    const doc = new Problem.Document({ type, title });
+    const doc = new Problem.Document({type, title});
 
     assert.equal(doc.title, title);
     assert.equal(doc.type, type);
@@ -17,11 +17,11 @@ describe('When creating a Problem Document with type and title', () => {
 });
 
 describe('When creating a Problem Document with invalid URI type member', () => {
-  it('should throw an error', done => {
+  it('should throw an error', (done) => {
     const type = 123;
 
     try {
-      const doc = new Problem.Document({ type });
+      new Problem.Document({type});
     } catch (error) {
       assert.notEqual(error, null);
 
@@ -31,13 +31,13 @@ describe('When creating a Problem Document with invalid URI type member', () => 
 });
 
 describe('When creating a Problem Document with an Extension', () => {
-  it('should contain extension', done => {
+  it('should contain extension', (done) => {
     const type = 'http://tempuri.org/my-problem';
     const title = `something went wrong`;
     const extensionName = 'invalid-params';
     const extensionValue = 'test';
-    const extension = new Problem.Extension({ 'invalid-params': extensionValue });
-    const doc = new Problem.Document({ type, title }, extension);
+    const extension = new Problem.Extension({'invalid-params': extensionValue});
+    const doc = new Problem.Document({type, title}, extension);
 
     assert.equal(doc[extensionName], extensionValue);
 
@@ -46,9 +46,9 @@ describe('When creating a Problem Document with an Extension', () => {
 });
 
 describe('When creating a Problem Document with status member', () => {
-  it('should contain status member', done => {
+  it('should contain status member', (done) => {
     const status = 400;
-    const doc = new Problem.Document({ status });
+    const doc = new Problem.Document({status});
 
     assert.equal(doc.status, status);
 
@@ -57,9 +57,9 @@ describe('When creating a Problem Document with status member', () => {
 });
 
 describe('When creating a Problem Document with detail member', () => {
-  it('should contain detail member', done => {
+  it('should contain detail member', (done) => {
     const detail = 'Your current balance is 30, but that costs 50.';
-    const doc = new Problem.Document({ detail });
+    const doc = new Problem.Document({detail});
 
     assert.equal(doc.detail, detail);
 
@@ -68,9 +68,9 @@ describe('When creating a Problem Document with detail member', () => {
 });
 
 describe('When creating a Problem Document with instance member', () => {
-  it('should contain instance member', done => {
+  it('should contain instance member', (done) => {
     const instance = '/account/12345/msgs/abc';
-    const doc = new Problem.Document({ instance });
+    const doc = new Problem.Document({instance});
 
     assert.equal(doc.instance, instance);
 
@@ -79,11 +79,11 @@ describe('When creating a Problem Document with instance member', () => {
 });
 
 describe('When creating a Problem Document with invalid URI instance member', () => {
-  it('should throw an error', done => {
+  it('should throw an error', (done) => {
     const instance = 123;
 
     try {
-      const doc = new Problem.Document({ instance });
+      new Problem.Document({instance});
     } catch (error) {
       assert.notEqual(error, null);
 
@@ -93,27 +93,27 @@ describe('When creating a Problem Document with invalid URI instance member', ()
 });
 
 describe('When creating a Problem Document only with status member', () => {
-  it('should contain status member', done => {
+  it('should contain status member', (done) => {
     const status = 400;
-    const doc = new Problem.Document({ status });
+    const doc = new Problem.Document({status});
 
     assert.equal(doc.status, status);
 
     return done();
   });
 
-  it(`should have type 'about:blank'`, done => {
+  it(`should have type 'about:blank'`, (done) => {
     const status = 400;
-    const doc = new Problem.Document({ status });
+    const doc = new Problem.Document({status});
 
     assert.equal(doc.type, 'about:blank');
 
     return done();
   });
 
-  it(`should have title of status code per HTTP spec (e.g. 400 - Bad Request`, done => {
+  it(`should have title of status code per HTTP spec (e.g. 400 - Bad Request`, (done) => {
     const status = 400;
-    const doc = new Problem.Document({ status });
+    const doc = new Problem.Document({status});
 
     assert.equal(doc.title, 'Bad Request');
 
