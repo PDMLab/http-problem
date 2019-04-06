@@ -24,6 +24,6 @@
     "eslint": "^3.19.0",
     "eslint-config-es": "^0.8.11",
     "eslint-plugin-extended": "^0.2.0",
-    "mocha": "^3.5.3"
+    "mocha": "^6.0.2"
   }
 }
