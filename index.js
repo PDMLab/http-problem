@@ -3,6 +3,9 @@
 const statusCodes = require('./lib/statuscodes');
 const url = require('url');
 
+/**
+ * A problem document according to RFC 7807
+ */
 class Document {
   /**
    *
@@ -13,9 +16,9 @@ class Document {
    * @param {String} [options.instance]
    * @param {Number} [options.status]
    * @param {Extension} [extension]
-   * @returns {{type: string, title: string}}
+   * @return {{type: string, title: string}}
    */
-  constructor (options, extension) {
+  constructor(options, extension) {
     const detail = options.detail;
     const instance = options.instance;
     let type = options.type;
@@ -43,7 +46,7 @@ class Document {
       title,
       detail,
       instance,
-      status
+      status,
     };
 
     if (extension) {
@@ -58,34 +61,37 @@ class Document {
   }
 }
 
+/**
+ * An problem document extension according to RFC 7807
+ */
 class Extension {
   /**
    *
    * @param {Object} extension
    */
-  constructor (extension) {
+  constructor(extension) {
     this.extensionProperties = extension;
   }
 }
 
-const BadRequestProblem = function () {
-  return new Document({ status: 400 });
+const BadRequestProblem = function() {
+  return new Document({status: 400});
 };
 
-const UnauthorizedProblem = function () {
-  return new Document({ status: 401 });
+const UnauthorizedProblem = function() {
+  return new Document({status: 401});
 };
 
-const ForbiddenProblem = function () {
-  return new Document({ status: 403 });
+const ForbiddenProblem = function() {
+  return new Document({status: 403});
 };
 
-const NotFoundProblem = function () {
-  return new Document({ status: 404 });
+const NotFoundProblem = function() {
+  return new Document({status: 404});
 };
 
-const InternalServerErrorProblem = function () {
-  return new Document({ status: 500 });
+const InternalServerErrorProblem = function() {
+  return new Document({status: 500});
 };
 
 module.exports = {
@@ -96,6 +102,6 @@ module.exports = {
     UnauthorizedProblem,
     ForbiddenProblem,
     NotFoundProblem,
-    InternalServerErrorProblem
-  }
+    InternalServerErrorProblem,
+  },
 };
