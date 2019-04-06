@@ -120,3 +120,53 @@ describe('When creating a Problem Document only with status member', () => {
     return done();
   });
 });
+
+describe('When creating a BadRequestProblem', () => {
+  it('should have status 400', (done) => {
+    const badRequestProblem = new Problem.StatusCodeProblems.BadRequestProblem();
+
+    assert.deepStrictEqual(badRequestProblem.status, 400);
+
+    return done();
+  });
+});
+
+describe('When creating a ForbiddenProblem', () => {
+  it('should have status 401', (done) => {
+    const forbiddenProblem = new Problem.StatusCodeProblems.ForbiddenProblem();
+
+    assert.deepStrictEqual(forbiddenProblem.status, 403);
+
+    return done();
+  });
+});
+
+describe('When creating a InternalServerErrorProblem', () => {
+  it('should have status 500', (done) => {
+    const internalServerErrorProblem = new Problem.StatusCodeProblems.InternalServerErrorProblem();
+
+    assert.deepStrictEqual(internalServerErrorProblem.status, 500);
+
+    return done();
+  });
+});
+
+describe('When creating a NotFoundProblem', () => {
+  it('should have status 404', (done) => {
+    const notFoundProblem = new Problem.StatusCodeProblems.NotFoundProblem();
+
+    assert.deepStrictEqual(notFoundProblem.status, 404);
+
+    return done();
+  });
+});
+
+describe('When creating a UnauthorizedProblem', () => {
+  it('should have status 401', (done) => {
+    const unauthorizedProblem = new Problem.StatusCodeProblems.UnauthorizedProblem();
+
+    assert.deepStrictEqual(unauthorizedProblem.status, 401);
+
+    return done();
+  });
+});
