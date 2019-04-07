@@ -99,7 +99,7 @@ Instances can be created like this:
 
 ```js
 const httpProblem = require('httpproblem');
-const UnauthorizedProblem new httpProblem.StatusCodeProblems.UnauthorizedProblem();
+const problem = new httpProblem.StatusCodeProblems.UnauthorizedProblem();
 ```
 
 ## Running the tests
