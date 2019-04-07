@@ -83,6 +83,25 @@ const doc = new httpProblem.Document({
 }, extension);
 ```
 
+### StatusCodeProblems
+
+`httpproblem` also provides some default problems for HTTP Status Codes you can just create without providing further details.
+
+The supported `StatusCodeProblems` you can create, are:
+
+- BadRequestProblem
+- UnauthorizedProblem
+- ForbiddenProblem,
+- NotFoundProblem,
+- InternalServerErrorProblem
+
+Instances can be created like this:
+
+```js
+const httpProblem = require('httpproblem');
+const UnauthorizedProblem new httpProblem.StatusCodeProblems.UnauthorizedProblem();
+```
+
 ## Running the tests
 
 ```
