@@ -30,7 +30,7 @@ declare module "httpproblem" {
 
     }
 
-    type Document = (options: IDocumentOptions, extension?: IExtension) => IDocument;
+    type DocumentConstructor = new (options: IDocumentOptions, extension?: IExtension) => IDocument;
     type Extension = (options: IExtensionOptions) => IExtension;
 
     type BadRequestProblem = IHttpProblem
@@ -40,7 +40,7 @@ declare module "httpproblem" {
     type UnauthorizedProblem = IHttpProblem
 
     const _: {
-        Document: Document,
+        Document: DocumentConstructor,
         StatusCodeProblems: {
             BadRequestProblem: BadRequestProblem,
             ForbiddenProblem: ForbiddenProblem,
