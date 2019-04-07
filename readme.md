@@ -5,7 +5,13 @@
 ## Installation
 
 ```
-npm install --save-dev httpproblem
+npm install --save httpproblem
+```
+
+or
+
+```
+yarn add httpproblem
 ```
 
 ## Usage
@@ -77,6 +83,25 @@ const doc = new httpProblem.Document({
 }, extension);
 ```
 
+### StatusCodeProblems
+
+`httpproblem` also provides some default problems for HTTP Status Codes you can just create without providing further details.
+
+The supported `StatusCodeProblems` you can create, are:
+
+- BadRequestProblem
+- UnauthorizedProblem
+- ForbiddenProblem,
+- NotFoundProblem,
+- InternalServerErrorProblem
+
+Instances can be created like this:
+
+```js
+const httpProblem = require('httpproblem');
+const UnauthorizedProblem new httpProblem.StatusCodeProblems.UnauthorizedProblem();
+```
+
 ## Running the tests
 
 ```
@@ -99,7 +124,7 @@ Also please add tests and make sure to run `npm run lint`.
 
 MIT License
 
-Copyright (c) 2017 PDMLab
+Copyright (c) 2017 - 2019 PDMLab
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
