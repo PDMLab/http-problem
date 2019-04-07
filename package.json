@@ -1,6 +1,6 @@
 {
   "name": "httpproblem",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Create Problem Details for HTTP APIs according to RFC 7807",
   "main": "index.js",
   "scripts": {
