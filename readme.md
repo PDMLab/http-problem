@@ -5,7 +5,13 @@
 ## Installation
 
 ```
-npm install --save-dev httpproblem
+npm install --save httpproblem
+```
+
+or
+
+```
+yarn add httpproblem
 ```
 
 ## Usage
