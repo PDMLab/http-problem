@@ -1,3 +1,7 @@
+`http-problem` was the first approach to implement RFC7807. It is still there because it is used in several projects.[http-problem-details](https://github.com/PDMLab/http-problem-details) is a more recent implementation written in TypeScript with extensibility in mind. Most efforts will be put in this one but if somebody sends a PR for the old implementation it is likely it’ll be merged as well.
+
+So if you’re not using a RFC7807 library right now, I would recommend [http-problem-details](https://github.com/PDMLab/http-problem-details) and its downstream libraries.
+
 # Create problem+json documents  with Node.js
 
 `httpproblem` is a small library that allos you to create `problem+json` documents according to [RFC 7807](https://tools.ietf.org/html/rfc7807).
