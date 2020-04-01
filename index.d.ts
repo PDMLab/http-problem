@@ -31,7 +31,7 @@ declare module "httpproblem" {
     }
 
     type DocumentConstructor = new (options: IDocumentOptions, extension?: IExtension) => IDocument;
-    type Extension = (options: IExtensionOptions) => IExtension;
+    type ExtensionConstructor = new (options: IExtensionOptions) => IExtension;
 
     type BadRequestProblem = IHttpProblem
     type ForbiddenProblem = IHttpProblem
@@ -48,7 +48,7 @@ declare module "httpproblem" {
             NotFoundProblem: NotFoundProblem,
             UnauthorizedProblem: UnauthorizedProblem
         },
-        Extension: Extension
+        Extension: ExtensionConstructor
     };
 
     export = _;
